@@ -1,0 +1,9 @@
+{
+  "short_name": "Expense tracker",
+  "name": "Expense tracker",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
