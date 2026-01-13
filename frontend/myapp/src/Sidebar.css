@@ -1,0 +1,253 @@
+.sidebar {
+  width: 280px;
+  height: calc(100vh - var(--navbar-h));
+  background: var(--color-white);
+  color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: var(--navbar-h);
+  z-index: 1100;
+  border-right: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+  padding: 32px 24px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.user-avatar-large {
+  width: 80px;
+  height: 80px;
+  background: var(--app-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border: 3px solid rgba(15, 23, 42, 0.06);
+}
+
+.avatar-text-large {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.user-info {
+  text-align: center;
+}
+
+.username {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.user-role {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-gray);
+  font-weight: 400;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 24px 0;
+}
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  width: calc(100% - 48px); /* smaller than sidebar width */
+  background: none;
+  border: none;
+  color: var(--color-black);
+  padding: 14px 18px; /* slightly tighter to match reduced width */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  margin: 6px 24px; /* inset from both sides so hover bg is narrower */
+  border-radius: 10px; /* rounded corners on hover */
+}
+
+.nav-link:hover {
+  background: rgba(37, 99, 235, 0.08);
+  transform: translateX(4px);
+  border-radius: 10px;
+}
+
+.nav-link:active {
+  background: rgba(37, 99, 235, 0.12);
+  border-radius: 10px;
+}
+
+.nav-icon {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+  color: var(--color-blue);
+}
+
+.nav-text {
+  flex: 1;
+}
+
+.sidebar-footer {
+  padding: 24px;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.logout-button {
+  width: 100%;
+  background: var(--color-white);
+  color: var(--color-red);
+  border: 1px solid rgba(220, 38, 38, 0.25);
+  padding: 16px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background: rgba(220, 38, 38, 0.06);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+}
+
+.logout-icon {
+  font-size: 18px;
+}
+
+.logout-text {
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 260px;
+    height: calc(100vh - var(--navbar-h));
+    position: fixed;
+    top: var(--navbar-h);
+    left: 0;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+    transform: translateX(-100%);
+  }
+
+  /* When sidebar is toggled open on mobile */
+  .home-container.mobile-sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .sidebar-header {
+    padding: 20px 16px;
+  }
+
+  .user-avatar-large {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+  }
+
+  .avatar-text-large {
+    font-size: 24px;
+  }
+
+  .username {
+    font-size: 18px;
+  }
+
+  .sidebar-nav {
+    padding: 16px 0;
+  }
+
+  .nav-link {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  .nav-icon {
+    font-size: 18px;
+  }
+
+  .sidebar-footer {
+    padding: 16px;
+  }
+
+  .logout-button {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar-header {
+    padding: 16px 12px;
+  }
+
+  .user-avatar-large {
+    width: 50px;
+    height: 50px;
+  }
+
+  .avatar-text-large {
+    font-size: 20px;
+  }
+
+  .username {
+    font-size: 16px;
+  }
+
+  .nav-link {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .nav-icon {
+    font-size: 16px;
+  }
+
+  .logout-button {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}

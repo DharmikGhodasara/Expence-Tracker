@@ -1,0 +1,89 @@
+.welcome-page {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  display: grid;
+  place-items: center; /* robust centering to avoid subtle flex shifts */
+  background: var(--app-bg);
+  padding: 2rem;
+  margin-top: 0;
+}
+
+.welcome-page .welcome-content {
+  text-align: center;
+  background: var(--color-white);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 4px 6px rgba(15, 23, 42, 0.05);
+  max-width: 720px; /* increased width */
+  width: 100%;
+  margin: 0 auto; /* equal left/right spacing */
+}
+
+.welcome-page .welcome-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0 0 1rem 0;
+}
+
+.welcome-page .welcome-content > p {
+  font-size: 1.25rem;
+  color: var(--color-gray);
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.welcome-page .welcome-cta {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--color-blue);
+  border-radius: 12px;
+  color: var(--color-white);
+}
+
+.welcome-page .welcome-cta p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .welcome-page {
+    padding: 1rem;
+  }
+
+  .welcome-page .welcome-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .welcome-page .welcome-content h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-page .welcome-content > p {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-page .welcome-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .welcome-page .welcome-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .welcome-page .welcome-content > p {
+    font-size: 1rem;
+  }
+
+  .welcome-page .welcome-cta {
+    padding: 1rem;
+  }
+
+  .welcome-page .welcome-cta p {
+    font-size: 1rem;
+  }
+}

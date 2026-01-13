@@ -1,0 +1,298 @@
+.root, :root {
+  --navbar-h: 64px;
+}
+
+.navbar {
+  background: var(--color-blue); /* primary blue */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: var(--navbar-h);
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0; /* span full width */
+  padding: 0 1.25rem; /* gutter */
+  display: flex;
+  justify-content: space-between; /* brand left, right content to the end */
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 1 auto; /* brand should size to content */
+}
+
+/* Flexible spacer to push right-side content */
+.flex-spacer {
+  flex: 1 1 auto;
+}
+
+/* Hamburger menu button */
+.menu-btn {
+  display: none; /* hidden by default on large screens */
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.navbar-heading {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff; /* white on blue navbar */
+  text-align: left;
+  text-shadow: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right-side container for tabs/user */
+.navbar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Generic icon sizing inside navbar */
+.navbar .icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 8px;
+  color: inherit; /* ensure icons match text color */
+}
+
+/* Menu button icon a bit larger and without extra margin */
+.menu-btn .icon {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.navbar-auth {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: 0; /* contained by .navbar-right */
+}
+
+/* Right-aligned tabs (visible when logged in) */
+.navbar-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 0.75rem;
+}
+
+.tab-link {
+  background: #f1f5f9; /* slate-100 */
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tab-link:hover {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+/* Logged-in user area */
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: 0; /* contained by .navbar-right */
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.user-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem; /* bigger spacing */
+  background: rgba(255, 255, 255, 0.12); /* adapt to blue navbar */
+  color: #ffffff; /* white text */
+  padding: 0.6rem 1rem; /* larger chip */
+  border-radius: 999px;
+  min-height: 40px; /* ensure taller chip */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 0.95rem; /* slightly larger text */
+  color: #ffffff;
+}
+
+/* Enlarge the icon specifically inside the user chip */
+.user-chip .icon {
+  width: 22px;
+  height: 22px;
+  color: #ffffff;
+}
+
+/* Hover effect to match navbar controls */
+.user-chip:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.logout-btn {
+  background: transparent; /* adapt to navbar */
+  color: #ffffff; /* white text on blue navbar */
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.auth-button {
+  padding: 0.65rem 1.1rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-btn {
+  background: transparent;
+  color: #ffffff; /* white on blue navbar */
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.login-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.signup-btn {
+  background: #ffffff; /* white pill on blue navbar */
+  color: var(--color-blue);
+  border: 1px solid #ffffff;
+}
+
+.signup-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: inline-flex; /* show on small screens */
+  }
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .navbar-heading {
+    font-size: 1.5rem;
+  }
+
+  .menu-btn {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+
+  .navbar-auth {
+    gap: 0.5rem;
+  }
+
+  .navbar-user {
+    gap: 0.5rem;
+  }
+
+  .auth-button {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 0.75rem;
+  }
+
+  .navbar-heading {
+    font-size: 1.25rem;
+  }
+
+  .menu-btn {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    font-size: 16px;
+  }
+
+  .navbar-auth {
+    gap: 0.5rem;
+  }
+
+  .auth-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+}

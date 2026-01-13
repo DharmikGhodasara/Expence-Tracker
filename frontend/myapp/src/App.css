@@ -1,0 +1,78 @@
+/* Global light theme tokens */
+:root {
+  --app-bg: #f5f7fb; /* light app background */
+  --color-white: #ffffff;
+  --color-black: #0f172a; /* slate-900 */
+  --color-gray: #64748b; /* slate-500 */
+  --color-gray-light: #94a3b8; /* slate-400 */
+  --color-blue: #2563eb; /* primary */
+  --color-red: #ef4444;
+  --color-positive: #16a34a; /* green-600 */
+  --color-accent: #f59e0b; /* amber-500 */
+}
+
+.App {
+  min-height: 100vh;
+  background: var(--app-bg);
+}
+
+.main-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 3rem;
+  background: var(--color-white);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section h2 {
+  color: var(--color-gray);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.welcome-section p {
+  color: var(--color-gray);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+}
+
+.cta-buttons {
+  margin-top: 2rem;
+}
+
+.cta-buttons p {
+  color: var(--color-gray-light);
+  color: #999;
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .welcome-section {
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  .welcome-section h2 {
+    font-size: 2rem;
+  }
+  
+  .welcome-section p {
+    font-size: 1rem;
+  }
+}

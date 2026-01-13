@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  /* Global light theme tokens (kept in sync with App.css) */
+  --app-bg: #f5f7fb; /* light app background */
+  --color-white: #ffffff;
+  --color-black: #0f172a; /* slate-900 */
+  --color-gray: #64748b; /* slate-500 */
+  --color-gray-light: #94a3b8; /* slate-400 */
+  --color-blue: #2563eb; /* primary */
+  --color-red: #ef4444;
+  --color-positive: #16a34a; /* green-600 */
+  --color-accent: #f59e0b; /* amber-500 */
+}
+
+/* Prevent horizontal scroll globally */
+html, body, #root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Safer sizing and media scaling */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
